@@ -1,0 +1,128 @@
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:white;
+    padding: 20px;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-title {
+    width: 75%;
+    margin-left: 0 px;
+    color: rgb(0, 0, 0);
+}
+
+.lalu{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;   
+}
+.lalu span{
+    cursor: pointer;
+    display: none;
+}
+
+.nav-items {
+    width: 90%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;   
+}
+.nav-items1{
+    display: none;
+}
+.nav-items a{
+    position: relative;
+    text-decoration: none;
+    font-family: 'Poppins',sans-serif;
+    color: black;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+.nav-items a:after{
+    content: "";
+    position: absolute;
+    background-color: #2545e4;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+.nav-items a:hover{
+    color:#2545e4;
+}
+.nav-items a:hover:after{
+    width: 100%;
+}
+.nav-pic{
+   
+    
+    width: 100%;
+    margin-top: 60px;
+} 
+.nav-pic img{
+    width: 100%;
+    
+
+}
+@media (max-width: 600px) {
+    .span{
+        flex: end;
+        text-align: right;
+        
+    }
+    .nav-title{
+        width: 90%;
+    }
+    .lalu{
+        display: grid;
+        width: 10%;
+    }
+    .lalu span{
+        cursor: pointer;
+        display: grid;
+        justify-content: right;
+        align-items: right;
+    }
+    
+    .nav-items {
+        display: none;   
+    }
+    .nav-items1 {
+        margin-top: 50px;
+        display: none;   
+        flex-direction: column;
+        position: fixed;
+        z-index: 2;
+        margin-left: 250px;                
+        background-color: #ffffff;
+        padding: 10px;
+        width: 30%;
+        justify-items: center; 
+        border-radius: 6px;
+           
+        
+
+    }
+    .nav-items1 a{
+        width: 100%;
+        background-color:#ffffff;
+        color:  #a2a2a2;
+        border-radius: 3px;
+        text-decoration: none;
+        margin-bottom: 3px;
+        text-align: center;
+        font-weight: bold ;
+        border: 0px 0px 1px 0px solid #eee;
+        
+    }  
+    
+}
