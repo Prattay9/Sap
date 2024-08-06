@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Resgister from './pages/Resgister';
 import About from './pages/About';
+import Whatsapp from './components/Whatsapp.';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path="/contact" element= {<Contact/>}/>
       <Route path="/about" element= {<About/>}/>
       <Route path="/register" element= {<Resgister/>}/>
+      <Route path="/whatsapp" element= {<Whatsapp/>}/>
      </Routes>
      </BrowserRouter>
     </div>

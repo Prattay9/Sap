@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import './Home.css';
 import { useState } from 'react';
 import axios from 'react';
+import Whatsapp from '../components/Whatsapp.';
 
 const Home = () => {
   const [values, setValues] = useState({
@@ -40,34 +41,56 @@ const handleSubmit = async (e) => {
   return (
     <>
     <Navbar/>  
+    <Whatsapp/>
         
-    <div className="home-main">
-      <div className="home-form">
-        <form method="POST" onSubmit={handleSubmit} className="my-form" >
-          <img className='home-image' src={Image} alt="" />
-          <div className= "home-1"> 
-            <h3> Request for Enquiry</h3>
-            <div className="input-field">              
-              <input name='name'  type="text" required spellCheck="false" onChange={handleInput}/>
-              <label  >Your Name</label>
-            </div>
-            <div className="input-field">                
-              <input name='contact' type="number"  required onChange={handleInput}/>
-              <label  htmlFor="">Your Phone Number</label>
-            </div>
+        <div className="home-main">
+          <div className="home-form">
+              <form method="POST" onSubmit={handleSubmit} className="my-form">
+                <img className='home-image' src={Image} alt="" />
+                <div className="home-1">
+                  <h3>Request for Enquiry</h3>
 
-            <div className="input-field">
-             
-            <input name='email' type="email"  required onChange={handleInput}/>
-            <label  htmlFor="">Your Email Id</label>
-            </div>    
-                       
-            <button className='home-btn'>Submit</button>
+                  <div className="input-field">
+                    <input
+                      name="name"
+                      type="text"
+                      required
+                      spellCheck="false"
+                      onChange={handleInput}
+                      pattern="[A-Za-z\s]+"
+                      title="Please enter only letters and spaces"
+                    />
+                    <label>Your Name</label>
+                  </div>
+
+                  <div className="input-field">
+                    <input
+                      name="contact"
+                      type="text"
+                      required
+                      onChange={handleInput}
+                      pattern="\d{10}"
+                      title="Please enter a 10-digit phone number"
+                    />
+                    <label>Your Phone Number</label>
+                  </div>
+
+                  <div className="input-field">
+                    <input
+                      name="email"
+                      type="email"
+                      required
+                      onChange={handleInput}
+                    />
+                    <label>Your Email Id</label>
+                  </div>
+                  <button className="home-btn">Submit</button>
+                </div>
+              </form>
            </div>
            
 
-        </form>
-      </div>
+        
       <div className="home-coursed">
         <div className="highlight">
           <h3>Instructor-Led Training Parameters</h3>
@@ -155,7 +178,6 @@ const handleSubmit = async (e) => {
               <h3>Module 1: SAP Integrated Business Planning</h3>
               <div className="home-drop-down">
                 <ul>
-                  <li></li>
                   <li>Outlining the SAP Integrated Business Planning Solution Strategy</li>
                   <li>Positioning SAP Integrated Business Planning Among Other Supply Chain Areas</li>
                   <li>Describing the Architecture of SAP Integrated Business Planning Powered by HANA</li>

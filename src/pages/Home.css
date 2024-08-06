@@ -1,9 +1,12 @@
+
 .home-main{
-    padding: 10px;
+    padding: 40px;
     display: flex;
-    margin-top: 30px;
     width: 100%;
-}
+    font-family: 'Times New Roman', Times, serif; 
+    scroll-behavior: smooth;
+    background: lightblue url('../images/home.jpeg') no-repeat fixed center;
+   }
 .home-form{
     height:665px;
     width: 25%;
@@ -52,7 +55,7 @@
     transition: .3s;
 }
 input:focus{
-    border: 3px solid #306fb8;
+    border: 3px solid #b86430;
     
 }
 
@@ -71,7 +74,7 @@ input:valid ~ label{
     margin-top: 45px;
     background-color: #020246;
     color: white;
-    transition: 0.5s ease;
+    transition: 0.3s ease;
     border-radius: 6px;
     border: none;
     font-weight: 600;
@@ -91,7 +94,7 @@ input:valid ~ label{
 .highlight{
     background-color:#f2f6fc ;
     padding: 20px 20px 20px 30px ;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius:6px ;
     
 }
@@ -102,15 +105,21 @@ input:valid ~ label{
     margin-top: 15px;
 }
 .home-head{
-    background-color: #f2f6fc;
-    padding: 20px 20px 20px 30px ;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color:transparent;
+    /* padding: 20px 20px 20px 30px ; */
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     border-radius: 6px;
-    
+    margin-bottom: 40px;
     
 }
 .home-content{
-    margin-top: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #f2f6fc;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 .home-drop-down{
@@ -119,11 +128,16 @@ input:valid ~ label{
     font-weight: bold;
     padding: 12px 0px 8px 0px;
     border-radius: 6px;
-    transition: 0.3s;
-    
+    transition: 0.3s;    
 }
 .home-drop-down:hover{
     transform: scale(1.025);
+}
+.home-heading-for-all{
+    padding: 20px 20px 20px 30px;
+    background-color: #f2f6fc; 
+    margin-top: 40px;
+    border-radius: 6px;
 }
 @media(max-width: 600px) {
     .home-main{
@@ -132,17 +146,24 @@ input:valid ~ label{
         font-size: 15px;
     }
     .home-form{
-        width: 80%;
+        width: 75%;
         margin: auto;
     }
     .home-coursed{
         width: 90%;
-        margin-top: 30px;
+        margin-top: 40px;
     }
     .home-content{
-        margin-top: 20px;
+        margin-top: 40px;
     }
     .home-point{
         display: grid;
     }
+    .home-heading-for-all{
+        padding: 20px 10px;
+    }
+    .home-btn{
+        height: 44px;
+    }
+    
 }
