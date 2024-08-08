@@ -1,6 +1,6 @@
 .contact {
     display: flex;    
-    background-image: url('../images/Contact.png');
+    background: lightblue url('../images/home.jpeg') no-repeat fixed center;
     background-size: cover;
     background-position: center;
     width: 100%;

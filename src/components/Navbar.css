@@ -39,6 +39,7 @@
     justify-content: space-around;
     margin: auto;
     color: white;
+    gap: 3vw;
 }
 
 .nav-items1 {
@@ -82,7 +83,7 @@
     width: 100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 850px) {
     .span {
         text-align: right;
     }

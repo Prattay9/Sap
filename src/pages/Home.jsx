@@ -4,7 +4,7 @@ import Image from '../images/form pic.jpeg'
 import Footer from '../components/Footer'
 import './Home.css';
 import { useState } from 'react';
-import axios from 'react';
+import axios from 'axios';
 import Whatsapp from '../components/Whatsapp.';
 
 const Home = () => {
@@ -12,32 +12,42 @@ const Home = () => {
     name: '',
     contact: '',
     email: '',
-    
-});
-const handleInput = (e) => {
-  const { name, value } = e.target;
-  setValues({
-      ...values,
-      [name]: value
   });
-};
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const endpoint = '/';
-  try {
-    const response = await axios.post(endpoint, values, {
-        headers: {
-            'Content-Type': 'application/json'
-        }
+
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
     });
-    const data = response.data;
-    if (response.status === 200) {
-      console.log('User registered in successfully');
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(values, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      // Ensure response.data exists before accessing it
+      if (response.status === 200 && response.data) {
+        console.log('User registered in successfully');
+      }
+    } catch (error) {
+      if (error.response) {
+        // Server responded with a status other than 200
+        console.log(error.response.data.error || error.response.data);
+      } else if (error.request) {
+        // Request was made but no response received
+        console.log('No response received from the server:', error.request);
+      } else {
+        // Something happened in setting up the request
+        console.log('Error', error.message);
+      }
     }
-  } catch (error) {
-    console.log(error.response.data.error || error.response.data);
-  }
-};
+  };
   return (
     <>
     <Navbar/>  
@@ -84,7 +94,7 @@ const handleSubmit = async (e) => {
                     />
                     <label>Your Email Id</label>
                   </div>
-                  <button className="home-btn">Submit</button>
+                  <button className="home-btn" type='submit'>Submit</button>
                 </div>
               </form>
            </div>

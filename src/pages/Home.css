@@ -22,9 +22,7 @@
 }
 .home-1{
     width: 85%;
-    margin: auto;
-
-    
+    margin: auto;    
 }
 
 .input-field{
@@ -123,7 +121,7 @@ input:valid ~ label{
 }
 
 .home-drop-down{
-    background-color: #020246;
+    background-color:#0d2c3f;
     color: whitesmoke;
     font-weight: bold;
     padding: 12px 0px 8px 0px;
@@ -166,4 +164,34 @@ input:valid ~ label{
         height: 44px;
     }
     
+}
+@media only screen and (min-width: 601px) and (max-width: 850px) {
+    .home-main{
+        display: grid;
+        padding: 30px 0px 0px 0px;
+        font-size: 15px;
+    }
+    .home-form{
+        width: 75%;
+        margin: auto;
+        height: 720px;
+    }
+    .home-coursed{
+        width: 90%;
+        margin-top: 40px;
+    }
+    .home-content{
+        margin-top: 40px;
+    }
+    .home-point{
+        display: grid;
+    }
+    .home-heading-for-all{
+        padding: 20px 10px;
+    }
+    .home-btn{
+        height: 44px;
+    }
+
+
 }
