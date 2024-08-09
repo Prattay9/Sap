@@ -9,36 +9,7 @@ import axios from 'axios';
 import { useState } from 'react';
 
 const Contact = () => {
-  const [values, setValues] = useState({
-    name: '',
-    contact: '',
-    email: '',
-    
-});
-const handleInput = (e) => {
-  const { name, value } = e.target;
-  setValues({
-      ...values,
-      [name]: value
-  });
-};
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const endpoint = '/';
-  try {
-    const response = await axios.post(endpoint, values, {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-    const data = response.data;
-    if (response.status === 200) {
-      console.log('User registered in successfully');
-    }
-  } catch (error) {
-    console.log(error.response.data.error || error.response.data);
-  }
-};
+
   
   return (
     <>
@@ -63,7 +34,7 @@ const handleSubmit = async (e) => {
         
         <div className="con-left">
         <div className="con-form">
-              <form method="POST"  onSubmit={handleSubmit} className="my-con-form">
+              <form method="POST"  className="my-con-form">
                 <img className='con-image' src={Image6} alt="" />
                 <div className="con-1">
                   <h3>Request for Enquiry</h3>
@@ -74,7 +45,6 @@ const handleSubmit = async (e) => {
                       type="text"
                       required
                       spellCheck="false"
-                      onChange={handleInput}
                       pattern="[A-Za-z\s]+"
                       title="Please enter only letters and spaces"
                     />
@@ -86,7 +56,6 @@ const handleSubmit = async (e) => {
                       name="contact"
                       type="text"
                       required
-                      onChange={handleInput}
                       pattern="\d{10}"
                       title="Please enter a 10-digit phone number"
                     />
@@ -98,7 +67,6 @@ const handleSubmit = async (e) => {
                       name="email"
                       type="email"
                       required
-                      onChange={handleInput}
                     />
                     <label>Your Email Id</label>
                   </div>

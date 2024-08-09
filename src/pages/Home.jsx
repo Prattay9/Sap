@@ -8,46 +8,7 @@ import axios from 'axios';
 import Whatsapp from '../components/Whatsapp.';
 
 const Home = () => {
-  const [values, setValues] = useState({
-    name: '',
-    contact: '',
-    email: '',
-  });
-
-  const handleInput = (e) => {
-    const { name, value } = e.target;
-    setValues({
-      ...values,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(values, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      // Ensure response.data exists before accessing it
-      if (response.status === 200 && response.data) {
-        console.log('User registered in successfully');
-      }
-    } catch (error) {
-      if (error.response) {
-        // Server responded with a status other than 200
-        console.log(error.response.data.error || error.response.data);
-      } else if (error.request) {
-        // Request was made but no response received
-        console.log('No response received from the server:', error.request);
-      } else {
-        // Something happened in setting up the request
-        console.log('Error', error.message);
-      }
-    }
-  };
+  
   return (
     <>
     <Navbar/>  
@@ -55,7 +16,7 @@ const Home = () => {
         
         <div className="home-main">
           <div className="home-form">
-              <form method="POST" onSubmit={handleSubmit} className="my-form">
+              <form method="POST" className="my-form">
                 <img className='home-image' src={Image} alt="" />
                 <div className="home-1">
                   <h3>Request for Enquiry</h3>
@@ -66,7 +27,6 @@ const Home = () => {
                       type="text"
                       required
                       spellCheck="false"
-                      onChange={handleInput}
                       pattern="[A-Za-z\s]+"
                       title="Please enter only letters and spaces"
                     />
@@ -78,7 +38,6 @@ const Home = () => {
                       name="contact"
                       type="text"
                       required
-                      onChange={handleInput}
                       pattern="\d{10}"
                       title="Please enter a 10-digit phone number"
                     />
@@ -90,7 +49,6 @@ const Home = () => {
                       name="email"
                       type="email"
                       required
-                      onChange={handleInput}
                     />
                     <label>Your Email Id</label>
                   </div>
